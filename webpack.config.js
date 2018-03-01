@@ -1,25 +1,29 @@
-'use strict';
+"use strict";
+const path = require("path");
 
-const path = require('path');
-
-module.export = {
-    entry: {
-        'index': path.resolve(__dirname, 'src/index.js')
+module.exports = {
+  entry: path.resolve(__dirname, "src/index.js"),
+  module: {
+    loaders: [
+      {
+        test: /\.vue$/,
+        loader: "vue-loader"
+      }
+    ]
+  },
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js"
+  },
+  resolve: {
+    alias: {
+      vue: "vue/dist/vue.esm.js"
     },
-    output: {
-        path: path.resolve(__dirname, './dist/'),
-        filename: 'bundle.js'
-    },
-    resolve: {
-        extensions: ['.ts', '.js', '.vue', '.json']
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.vue$/,
-                loader: 'vue-loader'
-            }
-        ]
-    }
-
-}
+    extensions: [".ts", ".js", ".vue", ".json"]
+  },
+  devServer: {
+    hot: true,
+    open: true,
+    port: 8888
+  }
+};

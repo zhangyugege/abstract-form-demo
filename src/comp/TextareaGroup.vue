@@ -5,6 +5,7 @@
             :value="value"
             :placeholder="desc"
         >
+        </textarea>
     </div>
 </template>
 <script>

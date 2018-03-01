@@ -41,8 +41,7 @@ export default {
           props: {
             label: itm.label,
             desc: itm.desc,
-            value: value[itm.model||undefined],
-            ...itm.commonProps
+            value: value[itm.model||undefined]
           }
         },
         this.recursiveGenElement(

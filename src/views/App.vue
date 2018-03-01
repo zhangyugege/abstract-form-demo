@@ -2,7 +2,7 @@
     <Creator :schema="schema" v-model="model" ref="creator" />
 </template>
 <script>
-import Creator from "./comp/Index.js";
+import Creator from "../comp/Index.js";
 export default {
   components: {
     Creator
