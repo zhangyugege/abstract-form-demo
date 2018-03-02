@@ -9,8 +9,21 @@ export default {
     TextareaGroup
   },
   props: {
-    schema,
-    model
+    schema: Array,
+    model: Object
+  },
+  render(h) {
+    return h(
+      "div",
+      {
+        class: 'creator-itm'
+      },
+      this.recursiveGenElement(
+        h,
+        this.schema,
+        this.model
+      )
+    );
   },
   methods: {
     getElement(schema) {
@@ -21,31 +34,19 @@ export default {
           return TextareaGroup;
       }
     },
-    render(createElement) {
-      return createElement(
-        "div",
-        {
-          class: this.containerClassName
-        },
-        this.recursiveGenElement(
-          createElement,
-          this.schema,
-          this.model
-        )
-      );
-    },
-    recursiveGenElement(createElement, schema, value, onChange) {
+    recursiveGenElement(createElement, schema, value) {
+      if (!schema) return ;
       return schema.map((itm, idx) => {
         return createElement(this.getElement(itm), {
           key: idx,
           props: {
             label: itm.label,
             desc: itm.desc,
-            value: value[itm.model||undefined]
+            value: (value && value[itm.model]) ? value[itm.model] : undefined
           }
         },
         this.recursiveGenElement(
-            createElememt,
+            createElement,
             schema.items,
             schema.model || undefined
         ));

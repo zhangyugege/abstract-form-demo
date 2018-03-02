@@ -11,9 +11,9 @@
 export default {
     name: 'InputGroup',
     props: {
-        desc,
-        value,
-        label
+        desc: String,
+        value: String,
+        label: String
     }
 
 };

@@ -10,11 +10,11 @@
 </template>
 <script>
 export default {
-    name: 'InputGroup',
+    name: 'TextareaGroup',
     props: {
-        desc,
-        value,
-        label
+        desc: String,
+        value: String,
+        label: String
     }
 
 };

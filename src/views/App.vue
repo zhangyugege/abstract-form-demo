@@ -17,13 +17,13 @@ export default {
           desc: "请输入姓名"
         },
         {
-          type: "text",
+          type: "textarea",
           label: "自我介绍",
           model: "desc",
           desc: "请输入自我介绍"
         }
       ],
-      model: loadLocalCache('login')
+      model: this.loadLocalCache('login')
     };
   },
   methods: {
