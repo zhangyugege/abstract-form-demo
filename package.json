@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "webpack-dev-server --color --host 127.0.0.1"
-    
+    "start:dev": "webpack-dev-server --inline --color --host 127.0.0.1"
   },
   "author": "",
   "license": "ISC",

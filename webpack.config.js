@@ -22,6 +22,9 @@ module.exports = {
     extensions: [".ts", ".js", ".vue", ".json"]
   },
   devServer: {
+    contentBase: './',
+    historyApiFallback: true,
+    inline: true,
     hot: true,
     open: true,
     port: 8888
